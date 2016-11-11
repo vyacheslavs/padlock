@@ -68,6 +68,8 @@ desired effect
 
       <!-- Your Page Content Here -->
 
+            <div class="col-md-6">
+
             <!-- Alert -->
             <div class="alert-box">
               <div class="alert alert-danger alert-dismissible" style="display:none;" id="alert_server_not_configured">
@@ -85,6 +87,7 @@ desired effect
               <li style="display:none"><a href="#tab_3" >Tab 3</a></li>
             </ul>
             <div class="tab-content">
+              <!-- /.tab-pane -->
               <div class="tab-pane active" id="tab_1">
                 <div class="form-group">
                     <label><i class="fa fa-check srv_creds_success" style="display:none"></i><i class="fa fa-times-circle-o srv_creds_error" style="display:none"></i> Padlock Server Address</label>
@@ -100,13 +103,26 @@ desired effect
               </div>
               <!-- /.tab-pane -->
               <div class="tab-pane" id="tab_2">
-                The European languages are members of the same family. Their separate existence is a myth.
-                For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ
-                in their grammar, their pronunciation and their most common words. Everyone realizes why a
-                new common language would be desirable: one could refuse to pay expensive translators. To
-                achieve this, it would be necessary to have uniform grammar, pronunciation and more common
-                words. If several languages coalesce, the grammar of the resulting language is more simple
-                and regular than that of the individual languages.
+
+              <div class="box-body">
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                  <div class="col-sm-10">
+                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+
+                  <div class="col-sm-10">
+                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                  </div>
+                </div>
+              </div>
+              <div class="box-footer">
+                <button type="submit" class="btn btn-info pull-right">Sign in</button>
+              </div>
+
               </div>
               <!-- /.tab-pane -->
               <div class="tab-pane" id="tab_3">
@@ -126,6 +142,7 @@ desired effect
       <!-- /.row -->
       <!-- END CUSTOM TABS -->
 
+      </div>
       <!-- /Your Page Content Here -->
 
     </section>
