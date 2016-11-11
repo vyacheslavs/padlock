@@ -1,0 +1,7 @@
+{
+    "manifest_version": 2,
+    "name": "padlock password master",
+    "description": "padlock stores your credential on your own server",
+    "version" : "1.0",
+    "options_page": "options.html"
+}
