@@ -7,6 +7,21 @@ function validateURL(textval) {
     return urlregex.test(textval);
 }
 
+function is_padlock_server_setup() {
+    if (typeof(options.settings.cdn.server) == "undefined")
+        return false;
+    if (typeof(options.settings.cdn.port) == "undefined")
+        return false;
+    return true;
+}
+
+function enable_account_settings() {
+    if (!is_padlock_server_setup())
+        return;
+
+    $("#acc_settings_tab").show();
+}
+
 function notify_invalid_url() {
     $("#pad_srv").parent().removeClass("has-success");
     $("#pad_srv").parent().addClass("has-error");
@@ -34,6 +49,7 @@ function store_urls(srv, port, url2) {
     localStorage['settings'] = JSON.stringify(options.settings);
 
     notify_good_url();
+    enable_account_settings();
 }
 
 function try_connect_to_padlock_server() {
@@ -91,6 +107,7 @@ function try_connect_to_padlock_server() {
                     }
 
                     store_urls($("#pad_srv").val(), $("#pad_srv_port").val(), url2_base);
+                    
                 } catch (err) {
                     console.log(err);
                     notify_invalid_url();
@@ -119,15 +136,12 @@ function load_settings() {
             notify_good_url();
         }
     }
+    enable_account_settings();
 }
 
 $(function(){
     $("[data-hide]").on("click", function() {
         $(this).closest("." + $(this).attr("data-hide")).hide();
-    });
-
-    $("#tab_2").on("click", function() {
-        $("#alert_server_not_configured").show();
     });
 
     $("#try_padlock_server").on("click", function() {
